@@ -1,0 +1,148 @@
+:root {
+  --clr-primary-400: hsl(257, 40%, 49%);
+  --clr-primary-300: hsl(300, 69%, 71%);
+  
+  --clr-neutral-100: hsl(0,0%,100%);
+  
+  --ff-heading: 'Poppins', sans-serif;;
+  --ff-body: 'Open Sans', sans-serif;;
+  
+  --fw-regular-open: 400;
+  --fw-regular-poppins: 400;
+  --fw-semi-bold: 600;
+  
+  --fs-400: 1.0625rem;
+  --fs-500: 1.2rem;
+  --fs-600: 1.6rem;
+  --fs-800: 2.5rem;
+}
+
+/* https://piccalil.li/blog/a-modern-css-reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+p {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+/* Typography */
+body {
+  background-color: var(--clr-primary-400);
+  background-image: url(/images/bg-mobile.svg);
+  background-repeat: no-repeat;
+  color: var(--clr-neutral-100);
+  font-family: var(--ff-body);
+  font-size: var(--fs-400);
+  line-height: 1.5;
+  text-align: center;
+}
+
+h1 {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-600);
+  font-weight: var(--fw-semi-bold);
+  max-width: 20ch;
+  margin: 0 auto;
+}
+
+@media (min-width: 50em) {
+  body {
+    background-image: url(/images/bg-desktop.svg);
+    font-size: var(--fs-500);
+    text-align: left;
+  }
+  
+  h1 {
+    font-size: var(--fs-800);
+    margin: 0;
+  }
+}
+
+/* Utilities */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.flow > *{
+  margin-bottom: 1rem;
+}
+
+/* Header */
+.header {
+  padding: 2rem;
+}
+
+.header img {
+  width: 180px;
+}
+
+/* Hero */
+.hero {
+  display: grid;
+  gap: 2rem;
+}
+
+.hero__img {
+ margin: 2rem 0;
+}
+
+@media (min-width: 50em) {
+  .hero {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+}
+
+/* Button */
+.btn {
+  background-color: var(--clr-neutral-100);
+  border: none;
+  border-radius: 100px;
+  color: var(--clr-primary-400);
+  padding: 1rem 4rem;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--clr-primary-300);
+  color: var(--clr-neutral-100);
+}
